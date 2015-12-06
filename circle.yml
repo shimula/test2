@@ -1,0 +1,14 @@
+test:
+  override:
+  - mvn clean
+  - mvn dependency:resolve
+  - mvn test -Dtest=UnitTestSuite
+  - mvn test -Dtest=IntegrationTestSuite
+  post:
+  - mvn clean
+
+machine:
+  timezone:
+    Asia/Tokyo
+  java:
+    version: oraclejdk8
